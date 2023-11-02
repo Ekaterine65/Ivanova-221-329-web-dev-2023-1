@@ -9,9 +9,9 @@ body {
     background: black;
 }
 
-.biography{
+.biography {
     background-image: url(images/background_biography.jpg);
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -20,7 +20,7 @@ body {
     text-align: center;
 }
 
-.index-img img{
+.index-img img {
     height: 100%;
 }
 
@@ -118,17 +118,20 @@ main {
 /* styles for sidebar */
 .sidebar {
     width: 75%;
-    height:fit-content;
+    height: fit-content;
     padding: 1rem;
     margin: 1rem;
-    position:sticky;
-    top:65px;
+    position: sticky;
+    top: 65px;
     border: 5px solid #F73859;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-h1, h3, h2, h4 {
+h1,
+h3,
+h2,
+h4 {
     text-align: center;
     color: #F73859;
 
@@ -137,7 +140,15 @@ h1, h3, h2, h4 {
     letter-spacing: 0.1em;
     text-decoration: none;
 }
- h4{color: #DBEDF3;margin: 0;}
+
+h2 .col {
+    font-size: unset;
+}
+
+h4 {
+    color: #DBEDF3;
+    margin: 0;
+}
 
 /* styles for main */
 
@@ -196,7 +207,7 @@ h1, h3, h2, h4 {
 
 .timeline__title {
     /* Take available width */
-    
+
     margin-left: 0.5rem;
 }
 
@@ -227,10 +238,11 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
-.contact-info, .social-links {
+.contact-info,
+.social-links {
     flex: 1;
 }
 
@@ -264,9 +276,9 @@ footer {
 /**
  * Make images responsive
  */
- .flex .col img {
-	width: 100%;
-	height: auto;
+.flex .col img {
+    width: 100%;
+    height: auto;
 }
 
 /**
@@ -276,13 +288,13 @@ footer {
  * cols for being centered.
  */
 .flex {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	width: auto;
-	margin: auto;
-	/* flex: 1; */
-	align-content: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: auto;
+    margin: auto;
+    /* flex: 1; */
+    align-content: stretch;
 }
 
 /**
@@ -291,17 +303,17 @@ footer {
  * col bottom.
  */
 .flex .col {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	flex: 1 1 300px;
-	/* 
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex: 1 1 300px;
+    /* 
 	In the order, equal to
 	flex-grow: 1;
 	flex-shrink: 1;
 	flex-basis: 300px;
 	*/
-	margin: 1em;
+    margin: 1em;
 }
 
 /**
@@ -311,17 +323,17 @@ footer {
  * stuck to the left.
  */
 .flex .col .btn {
-	align-self: flex-start;
-	margin-top: auto;
+    align-self: flex-start;
+    margin-top: auto;
 }
 
 /**
  * Under 900px wrap cols
  */
 @media (max-width: 900px) {
-	.flex {
-		flex-wrap: wrap;
-	}
+    .flex {
+        flex-wrap: wrap;
+    }
 }
 
 
@@ -337,15 +349,17 @@ footer {
     text-decoration: none;
     border: solid #F73859;
     cursor: pointer;
-    color: #F73859; 
-    border-radius: 5px; 
+    color: #F73859;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .btn:hover {
     background-color: #F73859;
-    color: #DBEDF3; /* Новый цвет фона при наведении */
+    color: #DBEDF3;
+    /* Новый цвет фона при наведении */
 }
 
-
-
+.print {
+    display: none;
+}
