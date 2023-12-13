@@ -1,0 +1,49 @@
+body {
+    background-color: #a1c2d1;
+}
+
+.bg-pink {
+    background-color: #f171a1;
+}
+
+.bg-white {
+    background-color: #f1ebf5;
+}
+
+.bg-purple {
+    background-color: #b29bc7;
+}
+
+.bg-darken {
+    background-color: #86a0ac;
+}
+
+.text-pink {
+    color: #e64298;
+}
+
+.img-circle {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* .about-text {
+    font-size: 3vw;
+} */
+
+.haha {
+    max-width: 75%;
+}
+
+.hg {
+    justify-content: center;
+}
+
+.icons {
+    color: #f171a1;
+}
+
+.card-body {
+    border: 5px dotted #f171a1;
+    border-radius: 10px;
+}
