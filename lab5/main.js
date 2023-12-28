@@ -99,7 +99,11 @@ function downloadData(page = 1, url) {
     let perPage = document.querySelector('.per-page-btn').value;
     url.searchParams.append('page', page);
     url.searchParams.append('per-page', perPage);
-
+    let searchField = document.querySelector('.search-field');
+    let searchTerm = searchField.value.trim();
+    if (searchTerm !== '') {
+        url.searchParams.append('q', searchTerm);
+    }
     let xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.responseType = 'json';
@@ -131,9 +135,6 @@ function searchBtnHandler(event) {
         let url = new URL(factsList.dataset.url);
         url.searchParams.append('q', searchTerm);
 
-        // Очищаем значение поля поиска
-        searchField.value = '';
-
         // Загружаем данные с учетом параметра q
         downloadData(1, url);
     }
@@ -144,9 +145,8 @@ document.querySelector('.search-field').addEventListener('input', function () {
 
     if (searchTerm !== '') {
         let autocompleteList = document.querySelector('.autocomplete-list');
-        let autocompleteUrl = 
         // eslint-disable-next-line max-len
-        `http://cat-facts-api.std-900.ist.mospolytech.ru/autocomplete?q=${searchTerm}`;
+        let autocompleteUrl = new URL(`http://cat-facts-api.std-900.ist.mospolytech.ru/autocomplete?q=${searchTerm}`);
 
         autocompleteList.innerHTML = '';
 
@@ -159,14 +159,12 @@ document.querySelector('.search-field').addEventListener('input', function () {
                     listItem.innerText = item;
 
                     listItem.addEventListener('click', function () {
-                        document.querySelector('.search-field').value =
-                            this.innerText;
+                        document.querySelector('.search-field').value = item;
                         autocompleteList.style.display = 'none';
                     });
 
                     autocompleteList.appendChild(listItem);
                 });
-
                 autocompleteList.style.display = 'block';
             });
     } else {
@@ -184,10 +182,11 @@ document.addEventListener('click', function (event) {
     }
 });
 
+/*
 document.querySelector('.search-field').addEventListener('focus', function () {
     document.querySelector('.autocomplete-list').style.display = 'none';
 });
-
+*/
 
 window.onload = function () {
     downloadData();
